@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Popup (Open - 3).ogg" type="AudioStream" id=1]
+[ext_resource path="res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Popup (Open - 2).ogg" type="AudioStream" id=2]
+[ext_resource path="res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Error (2).ogg" type="AudioStream" id=3]
+[ext_resource path="res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Cancel.ogg" type="AudioStream" id=4]
+
+[node name="Audio" type="Node"]
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -7.5
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -10.0
+
+[node name="Candy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -5.0
+
+[node name="WallHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -10.0
+pitch_scale = 1.5

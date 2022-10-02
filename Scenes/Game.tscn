@@ -1,0 +1,480 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Assets/Bird.png" type="Texture" id=1]
+[ext_resource path="res://Assets/ScoreCircle.png" type="Texture" id=2]
+[ext_resource path="res://Assets/BackGround.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Spikes.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Bird.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Bird_flapped.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/Spikes.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Bird_dead.png" type="Texture" id=8]
+[ext_resource path="res://Fonts/Blissful Thinking.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=10]
+[ext_resource path="res://Fonts/GemunuLibre-SemiBold.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Assets/Replay Box.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Score Box.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Candy.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/Sprites.gd" type="Script" id=15]
+
+[sub_resource type="DynamicFont" id=8]
+size = 352
+use_mipmaps = true
+use_filter = true
+extra_spacing_bottom = 16
+font_data = ExtResource( 11 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 640 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 360, 37 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 360, 50 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "death",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "jump",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 28, 28 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 98
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 52
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 64
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 64
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 63
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 64
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=15]
+resource_name = "FadeIn"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("../AnimationPlayer/FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "FadeOut"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("../AnimationPlayer/FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "MenuBird"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Bird:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 360, 690 ), Vector2( 360, 640 ), Vector2( 360, 590 ), Vector2( 360, 649 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Bird/Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "default", "jump", "default" ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Bird:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 360, 640 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Bird/Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "default" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../AnimationPlayer/FadeRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="Sprites" type="Node2D" parent="."]
+script = ExtResource( 15 )
+
+[node name="BackGround" type="Sprite" parent="Sprites"]
+modulate = Color( 0.921569, 0.921569, 0.921569, 1 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ScoreCircle" type="Sprite" parent="Sprites"]
+position = Vector2( 360, 640 )
+texture = ExtResource( 2 )
+
+[node name="Spikes" type="Sprite" parent="Sprites"]
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Label" type="Label" parent="."]
+margin_right = 720.0
+margin_bottom = 1280.0
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_fonts/font = SubResource( 8 )
+align = 1
+valign = 1
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 0, 640 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 720, 640 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 360, 37 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 360, 1230 )
+shape = SubResource( 5 )
+
+[node name="Bird" type="KinematicBody2D" parent="."]
+unique_name_in_owner = true
+position = Vector2( 360, 640 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Bird"]
+frames = SubResource( 4 )
+
+[node name="BirdCollision" type="CollisionShape2D" parent="Bird"]
+shape = SubResource( 3 )
+
+[node name="Spikes" type="Node2D" parent="."]
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+script = ExtResource( 7 )
+
+[node name="Menu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 720.0
+margin_bottom = 1280.0
+
+[node name="GameName" type="Label" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.175
+anchor_right = 0.5
+anchor_bottom = 0.175
+margin_left = -360.0
+margin_top = -175.0
+margin_right = 360.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 720, 350 )
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "DON'T TOUCH
+THE SPIKES"
+align = 1
+valign = 1
+
+[node name="TapToJump" type="Label" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.39
+anchor_right = 0.5
+anchor_bottom = 0.39
+margin_left = -94.0
+margin_top = -56.5
+margin_right = 94.0
+margin_bottom = 56.5
+custom_colors/font_color = Color( 1, 0.203922, 0.392157, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "TAP
+TO JUMP"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 0.85
+margin_top = -140.0
+rect_min_size = Vector2( 720, 0 )
+alignment = 1
+
+[node name="Candies" type="HBoxContainer" parent="Menu/VBoxContainer"]
+margin_right = 720.0
+margin_bottom = 68.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Menu/VBoxContainer/Candies"]
+margin_left = 284.0
+margin_right = 387.5
+margin_bottom = 68.0
+rect_min_size = Vector2( 103.5, 51 )
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/VBoxContainer/Candies"]
+margin_left = 391.0
+margin_right = 416.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="Label" type="Label" parent="Menu/VBoxContainer/Candies"]
+margin_left = 420.0
+margin_right = 435.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 1, 0.509804, 0.027451, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "1"
+
+[node name="BestScore" type="Label" parent="Menu/VBoxContainer"]
+margin_top = 72.0
+margin_right = 720.0
+margin_bottom = 140.0
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "BEST SCORE : 1"
+align = 1
+valign = 1
+
+[node name="GamesPlayed" type="Label" parent="Menu/VBoxContainer"]
+margin_top = 144.0
+margin_right = 720.0
+margin_bottom = 212.0
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "GAMES PLAYED: 1"
+align = 1
+valign = 1
+
+[node name="DeathScreen" type="Control" parent="."]
+visible = false
+margin_right = 720.0
+margin_bottom = 1280.0
+
+[node name="GameName" type="Label" parent="DeathScreen"]
+anchor_left = 0.5
+anchor_top = 0.175
+anchor_right = 0.5
+anchor_bottom = 0.175
+margin_left = -360.0
+margin_top = -175.0
+margin_right = 360.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 720, 350 )
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "DON'T TOUCH
+THE SPIKES"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeathScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -206.0
+margin_top = -143.0
+margin_right = 206.0
+margin_bottom = 143.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="ScoreBox" type="TextureRect" parent="DeathScreen/VBoxContainer"]
+margin_right = 412.0
+margin_bottom = 150.0
+texture = ExtResource( 13 )
+stretch_mode = 6
+
+[node name="Score" type="Label" parent="DeathScreen/VBoxContainer/ScoreBox"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.0
+margin_top = -67.5
+margin_right = 175.0
+margin_bottom = 67.5
+rect_min_size = Vector2( 350, 0 )
+custom_fonts/font = SubResource( 12 )
+text = "1
+POINTS"
+align = 1
+valign = 1
+
+[node name="RestartButton" type="Button" parent="DeathScreen/VBoxContainer"]
+margin_top = 200.0
+margin_right = 412.0
+margin_bottom = 286.0
+focus_mode = 0
+custom_fonts/font = SubResource( 9 )
+enabled_focus_mode = 0
+text = "REPLAY"
+icon = ExtResource( 12 )
+flat = true
+icon_align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="DeathScreen"]
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 0.85
+margin_top = -140.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 720, 0 )
+alignment = 1
+
+[node name="Candies" type="HBoxContainer" parent="DeathScreen/VBoxContainer2"]
+margin_right = 720.0
+margin_bottom = 68.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="DeathScreen/VBoxContainer2/Candies"]
+margin_left = 299.0
+margin_right = 402.5
+margin_bottom = 68.0
+rect_min_size = Vector2( 103.5, 51 )
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 6
+
+[node name="MarginContainer2" type="MarginContainer" parent="DeathScreen/VBoxContainer2/Candies"]
+margin_left = 406.0
+margin_right = 431.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="Label" type="Label" parent="DeathScreen/VBoxContainer2/Candies"]
+margin_left = 406.0
+margin_right = 421.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 1, 0.509804, 0.027451, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "1"
+
+[node name="BestScore" type="Label" parent="DeathScreen/VBoxContainer2"]
+margin_top = 72.0
+margin_right = 720.0
+margin_bottom = 140.0
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "BEST SCORE : 1"
+align = 1
+valign = 1
+
+[node name="GamesPlayed" type="Label" parent="DeathScreen/VBoxContainer2"]
+margin_top = 144.0
+margin_right = 720.0
+margin_bottom = 212.0
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "GAMES PLAYED: 1"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Menu")
+autoplay = "MenuBird"
+anims/FadeIn = SubResource( 15 )
+anims/FadeOut = SubResource( 16 )
+anims/MenuBird = SubResource( 10 )
+anims/RESET = SubResource( 11 )
+
+[node name="FadeRect" type="ColorRect" parent="AnimationPlayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+input_pass_on_modal_close_click = false
+color = Color( 1, 1, 1, 0 )
+
+[connection signal="pressed" from="DeathScreen/VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
