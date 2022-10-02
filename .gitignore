@@ -15,3 +15,13 @@ data_*/
 *.import
 *.stex
 *.scn
+
+#Game builds
+.Builds/
+
+# Android exports
+*.apk
+*.apk.idsig
+
+# Windows exports
+*.exe
