@@ -2,8 +2,8 @@ extends Node2D
 
 onready var ScoreText: Label = $"../Label"
 
-func on_score_change(score: int):
-	match score:
+func on_score_change(score: int): #This method is called by Game.gd whenever the score changes
+	match score: #Colors were scanned from the original game
 		5:
 			change_background(Color("E0EAF0"), Color("63757F"))
 		10:
@@ -16,6 +16,17 @@ func on_score_change(score: int):
 			change_background(Color("727272"), Color("FFFFFF")) 
 		#Kinda cba to do all 100 ngl
 	pass
+
+
+#Changing the background:
+#Creating two tweens, one for property tweening, second for method tweening (one single tween can't tween both methods and properties in parallel)
+#change_background function takes two parameters background color, and spike color.
+#however, we need to modulate more than 2 nodes, so here are the nodes we modulate
+#background color is assigned to: Score Label (the one in the center) and the background sprite
+#spike color is assigned to: GameName label on death screen
+#                            BestScore label on death screen
+#                            GamesPlayed label on deathscreen
+#                            And the whole Spikes node
 
 func change_background(bg: Color, spike: Color):
 	var tween = create_tween().set_parallel(true)
