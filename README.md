@@ -4,7 +4,7 @@
 This is a simple project I made in a few days which I hope will help people to learn the Godot game engine.
 
 ## Contributing
-Contributing or fixing my mistakes is absolutly welcomed, this project is not a full replica of the original game, it lacks many features and probably contains lots of bugs.
+Contributing or fixing my mistakes is absolutely welcomed, this project is not a full replica of the original game, it lacks many features and probably contains lots of bugs.
 
 ## Assets
 All of the assets were made by me expect for the audio.
@@ -13,6 +13,8 @@ Audio credits: JDSherbert
 
 ## Note
 In order to test out the project you do not need to download it's source and run it in Godot. I provided exports for Windows and Android platforms in the Release tab.
+
+Also the game is now available to play on the web here: https://m1zukash1.itch.io/dtts-remade-in-godot
 
 ## Game Screenshots
 
