@@ -1,7 +1,7 @@
 extends Node2D
 
 var is_game_started:bool = false
-var score: int = 0
+var score: int = 14
 
 
 

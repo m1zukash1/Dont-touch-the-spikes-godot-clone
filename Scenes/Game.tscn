@@ -464,7 +464,6 @@ valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Menu")
-autoplay = "MenuBird"
 anims/FadeIn = SubResource( 15 )
 anims/FadeOut = SubResource( 16 )
 anims/MenuBird = SubResource( 10 )
