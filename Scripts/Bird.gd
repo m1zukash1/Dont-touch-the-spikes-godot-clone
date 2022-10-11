@@ -1,18 +1,22 @@
 extends KinematicBody2D
+class_name Bird
 
-var speed:float = 400
-var jump_speed:float = 700
-var gravity:float = 2000
+var speed : float = 400
+var jump_speed : float = 700
+var gravity : float = 2000
 
 onready var Particle = preload("res://Scenes/Particle.tscn")
 
-var is_dead:bool = false
+var is_dead :bool = false
 
 var velocity: Vector2 = Vector2.ZERO
 
+var particle_cooldown : float 
+var particle_cooldown_expired : bool = true
+var can_spawn_particles : bool = true
+
 signal hit_wall
 signal died
-
 
 func _input(event: InputEvent) -> void:
 	#Basically: do not perform jump, if the bird is dead, or the game hasn't started
@@ -30,15 +34,15 @@ func _process(delta: float) -> void:
 	
 	velocity.y += gravity * delta
 	
-	
 	#Checking for death conditions, if the bird died to the floor spikes it looks better if it performs a jump, but if the bird died to ceiling spikes, it looks better if it just falls asap
 	if is_on_floor():
 		die()
 		jump()
+	
 	if is_on_ceiling():
 		die()
 	
-	if is_on_wall():#if the wall is hit, change flying direction
+	if is_on_wall(): #if the wall is hit, change flying direction
 		emit_signal("hit_wall")
 		speed = -speed
 		velocity.x = speed
@@ -49,10 +53,8 @@ func _process(delta: float) -> void:
 		
 	move_and_slide(velocity, Vector2.UP)
 	
-var particle_cooldown: float 
-var particle_cooldown_expired:bool = true
-var can_spawn_particles:bool = true
-func jump():
+	
+func jump() -> void:
 	
 	velocity.y = -jump_speed #Performing the jump
 	
@@ -70,7 +72,7 @@ func jump():
 		yield(get_tree().create_timer(particle_cooldown),"timeout") #Introducing a cooldown before being able to spawn new particles so the screen wouldn't get flooded with new particles if the player spams the screen with jumps
 		particle_cooldown_expired = true
 
-func die():
+func die() -> void:
 	if is_dead:
 		return
 		
@@ -78,7 +80,7 @@ func die():
 	Audio.get_node("Death").play()
 	emit_signal("died")
 	can_spawn_particles = false
-	speed *= 3 #improvised death anim
+	speed *= 3 # improvised death anim
 	velocity.x = speed
 	$Sprite.play("death")
 	var tween = create_tween()

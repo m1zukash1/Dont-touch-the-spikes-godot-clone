@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Bird",
+"language": "GDScript",
+"path": "res://Scripts/Bird.gd"
+} ]
+_global_script_class_icons={
+"Bird": ""
+}
+
 [application]
 
 config/name="Don't touch the spikes Godot clone"

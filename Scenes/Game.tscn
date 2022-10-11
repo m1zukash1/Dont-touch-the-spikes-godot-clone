@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Spikes.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Bird.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Bird_flapped.png" type="Texture" id=6]
-[ext_resource path="res://Scripts/Spikes.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/SpikeSpawner.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Bird_dead.png" type="Texture" id=8]
 [ext_resource path="res://Fonts/Blissful Thinking.otf" type="DynamicFontData" id=9]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=10]
@@ -238,7 +238,7 @@ frames = SubResource( 4 )
 [node name="BirdCollision" type="CollisionShape2D" parent="Bird"]
 shape = SubResource( 3 )
 
-[node name="Spikes" type="Node2D" parent="."]
+[node name="SpikeSpawner" type="Node2D" parent="."]
 modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
 script = ExtResource( 7 )
 
@@ -338,7 +338,6 @@ align = 1
 valign = 1
 
 [node name="DeathScreen" type="Control" parent="."]
-visible = false
 margin_right = 720.0
 margin_bottom = 1280.0
 
@@ -420,8 +419,8 @@ margin_bottom = 68.0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="DeathScreen/VBoxContainer2/Candies"]
-margin_left = 299.0
-margin_right = 402.5
+margin_left = 284.0
+margin_right = 387.5
 margin_bottom = 68.0
 rect_min_size = Vector2( 103.5, 51 )
 texture = ExtResource( 14 )
@@ -429,14 +428,14 @@ expand = true
 stretch_mode = 6
 
 [node name="MarginContainer2" type="MarginContainer" parent="DeathScreen/VBoxContainer2/Candies"]
-margin_left = 406.0
-margin_right = 431.0
+margin_left = 391.0
+margin_right = 416.0
 margin_bottom = 68.0
 rect_min_size = Vector2( 25, 0 )
 
 [node name="Label" type="Label" parent="DeathScreen/VBoxContainer2/Candies"]
-margin_left = 406.0
-margin_right = 421.0
+margin_left = 420.0
+margin_right = 435.0
 margin_bottom = 68.0
 custom_colors/font_color = Color( 1, 0.509804, 0.027451, 1 )
 custom_fonts/font = SubResource( 14 )
