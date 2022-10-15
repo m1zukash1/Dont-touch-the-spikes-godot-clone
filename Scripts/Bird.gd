@@ -42,13 +42,13 @@ func _process(delta: float) -> void:
 	if is_on_ceiling():
 		die()
 	
-	if is_on_wall(): #if the wall is hit, change flying direction
+	if is_on_wall(): #If the wall is hit, change flying direction
 		emit_signal("hit_wall")
 		speed = -speed
 		velocity.x = speed
-		$Sprite.flip_h = !$Sprite.flip_h #flips the spride to opposite direction
+		$Sprite.flip_h = !$Sprite.flip_h #flips the sprite to opposite direction
 		
-	if is_dead: #improvised death animation
+	if is_dead: #Improvised death animation
 		rotation_degrees += 1000 * delta
 		
 	move_and_slide(velocity, Vector2.UP)
@@ -80,9 +80,9 @@ func die() -> void:
 	Audio.get_node("Death").play()
 	emit_signal("died")
 	can_spawn_particles = false
-	speed *= 3 # improvised death anim
+	speed *= 3 #Improvised death anim
 	velocity.x = speed
 	$Sprite.play("death")
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", .0, 0.75) #fading out the bird sprite
+	tween.tween_property(self, "modulate:a", .0, 0.75) #Fading out the bird sprite
 	tween.play()

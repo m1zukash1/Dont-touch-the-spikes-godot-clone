@@ -11,5 +11,5 @@ dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - UI Hover.ogg-e7f
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
