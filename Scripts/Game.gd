@@ -20,6 +20,7 @@ func _ready() -> void:
 	$DeathScreen.visible = false
 	$Menu.visible = true
 	
+	$AnimationPlayer.play("BirdIdleMenuAnimation")
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

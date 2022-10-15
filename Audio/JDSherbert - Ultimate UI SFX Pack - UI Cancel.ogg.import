@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JDSherbert - Ultimate UI SFX Pack - UI Cancel.ogg-bb911169a36512a1a040d3c1016c8f06.oggstr"
+
+[deps]
+
+source_file="res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Cancel.ogg"
+dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - UI Cancel.ogg-bb911169a36512a1a040d3c1016c8f06.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

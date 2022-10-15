@@ -10,12 +10,6 @@ export_presets.cfg
 .mono/
 data_*/
 
-# Global imports
-*.md5
-*.import
-*.stex
-*.scn
-
 #Game builds
 .Builds/
 

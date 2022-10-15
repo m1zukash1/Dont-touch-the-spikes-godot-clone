@@ -81,6 +81,35 @@ font_data = ExtResource( 9 )
 size = 64
 font_data = ExtResource( 9 )
 
+[sub_resource type="Animation" id=10]
+resource_name = "BirdIdleMenuAnimation"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Bird:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 360, 690 ), Vector2( 360, 640 ), Vector2( 360, 590 ), Vector2( 360, 649 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Bird/Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "default", "jump", "default" ]
+}
+
 [sub_resource type="Animation" id=15]
 resource_name = "FadeIn"
 length = 0.1
@@ -111,35 +140,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "MenuBird"
-length = 1.2
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("../Bird:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.3, 0.6, 0.9, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 360, 690 ), Vector2( 360, 640 ), Vector2( 360, 590 ), Vector2( 360, 649 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Bird/Sprite:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ "default", "jump", "default" ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -463,9 +463,9 @@ valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Menu")
+anims/BirdIdleMenuAnimation = SubResource( 10 )
 anims/FadeIn = SubResource( 15 )
 anims/FadeOut = SubResource( 16 )
-anims/MenuBird = SubResource( 10 )
 anims/RESET = SubResource( 11 )
 
 [node name="FadeRect" type="ColorRect" parent="AnimationPlayer"]
