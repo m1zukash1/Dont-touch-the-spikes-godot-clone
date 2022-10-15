@@ -17,7 +17,6 @@ func on_score_change(score: int): #This method is called by Game.gd whenever the
 		#Kinda cba to do all 100 ngl
 	pass
 
-
 #Changing the background:
 #Creating two tweens, one for property tweening, second for method tweening (one single tween can't tween both methods and properties in parallel)
 #change_background function takes two parameters background color, and spike color.
@@ -37,10 +36,10 @@ func change_background(bg: Color, spike: Color):
 	tween_meth.tween_method(self, "change_label_color", $"../DeathScreen/VBoxContainer2/GamesPlayed".get("custom_colors/font_color"), spike, 0.25, [$"../DeathScreen/VBoxContainer2/GamesPlayed"])	
 	tween.tween_property($BackGround, "modulate", bg, 0.25)
 	tween.tween_property($Spikes, "modulate", spike, 0.25)
-	tween.tween_property($"../Spikes", "modulate", spike, 0.25)
+	tween.tween_property($"../SpikeSpawner", "modulate", spike, 0.25)
 	pass
 
 
 func change_label_color(color: Color, LabelNode: Label):
 	LabelNode.set("custom_colors/font_color", color)
-	pass 
+	pass
