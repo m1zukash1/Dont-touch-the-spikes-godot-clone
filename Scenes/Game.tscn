@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Assets/Bird.png" type="Texture" id=1]
 [ext_resource path="res://Assets/ScoreCircle.png" type="Texture" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://Assets/Score Box.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Candy.png" type="Texture" id=14]
 [ext_resource path="res://Scripts/Sprites.gd" type="Script" id=15]
+[ext_resource path="res://Assets/MenuButtons/EmptyButton.png" type="Texture" id=16]
+[ext_resource path="res://Assets/MenuButtons/CandyButton.png" type="Texture" id=17]
+[ext_resource path="res://Assets/MenuButtons/HardModeButton.png" type="Texture" id=18]
+[ext_resource path="res://Scripts/ButtonContainer.gd" type="Script" id=19]
 
 [sub_resource type="DynamicFont" id=8]
 size = 352
@@ -184,6 +188,10 @@ tracks/2/keys = {
 [node name="Game" type="Node2D"]
 script = ExtResource( 10 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 360, 640 )
+current = true
+
 [node name="Sprites" type="Node2D" parent="."]
 script = ExtResource( 15 )
 
@@ -337,7 +345,160 @@ text = "GAMES PLAYED: 1"
 align = 1
 valign = 1
 
+[node name="ButtonContainer" type="Control" parent="Menu"]
+margin_left = 21.6
+margin_top = 946.0
+margin_right = 175.6
+margin_bottom = 946.0
+script = ExtResource( 19 )
+
+[node name="LeftSideButtons" type="VBoxContainer" parent="Menu/ButtonContainer"]
+anchor_left = 0.03
+anchor_top = 0.5
+anchor_right = 0.05
+anchor_bottom = 0.5
+margin_left = -4.62
+margin_top = -946.0
+margin_right = 96.3
+margin_bottom = 334.0
+focus_mode = 2
+custom_constants/separation = 4
+alignment = 1
+
+[node name="HardModeButton" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
+margin_top = 336.0
+margin_right = 104.0
+margin_bottom = 434.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 18 )
+flat = true
+
+[node name="Button2" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
+margin_top = 438.0
+margin_right = 104.0
+margin_bottom = 536.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 16 )
+flat = true
+
+[node name="Button3" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
+margin_top = 540.0
+margin_right = 104.0
+margin_bottom = 638.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 16 )
+flat = true
+
+[node name="Button4" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
+margin_top = 642.0
+margin_right = 104.0
+margin_bottom = 740.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 16 )
+flat = true
+
+[node name="Button5" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
+margin_top = 744.0
+margin_right = 104.0
+margin_bottom = 842.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 16 )
+flat = true
+
+[node name="Button6" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
+margin_top = 846.0
+margin_right = 104.0
+margin_bottom = 944.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 16 )
+flat = true
+
+[node name="RightSideButtons" type="VBoxContainer" parent="Menu/ButtonContainer"]
+anchor_left = 0.97
+anchor_top = 0.5
+anchor_right = 0.97
+anchor_bottom = 0.5
+margin_left = 423.42
+margin_top = -946.0
+margin_right = 527.42
+margin_bottom = 334.0
+custom_constants/separation = 4
+alignment = 1
+
+[node name="Button" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
+margin_top = 336.0
+margin_right = 104.0
+margin_bottom = 434.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 16 )
+flat = true
+clip_text = true
+icon_align = 1
+
+[node name="Button2" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
+margin_top = 438.0
+margin_right = 104.0
+margin_bottom = 536.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 16 )
+flat = true
+clip_text = true
+icon_align = 1
+
+[node name="Button3" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
+margin_top = 540.0
+margin_right = 104.0
+margin_bottom = 638.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 16 )
+flat = true
+clip_text = true
+icon_align = 1
+
+[node name="Button4" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
+margin_top = 642.0
+margin_right = 104.0
+margin_bottom = 740.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 17 )
+flat = true
+clip_text = true
+icon_align = 1
+
+[node name="Button5" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
+margin_top = 744.0
+margin_right = 104.0
+margin_bottom = 842.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 16 )
+flat = true
+clip_text = true
+icon_align = 1
+
+[node name="Button6" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
+margin_top = 846.0
+margin_right = 104.0
+margin_bottom = 944.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 16 )
+flat = true
+clip_text = true
+icon_align = 1
+
 [node name="DeathScreen" type="Control" parent="."]
+visible = false
 margin_right = 720.0
 margin_bottom = 1280.0
 

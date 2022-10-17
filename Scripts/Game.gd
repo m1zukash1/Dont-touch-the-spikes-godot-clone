@@ -66,6 +66,11 @@ func start_game() -> void:
 	spawn_candy()
 	is_game_started = true
 	$Label.set_text(str(score).pad_zeros(2)) #Setting the score
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property($Menu, "modulate:a", 0.0, 0.25)
+	tween.play()
+	yield(tween,"finished")
 	$Menu.hide()
 
 func _on_RestartButton_pressed() -> void:

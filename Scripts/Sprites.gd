@@ -22,7 +22,8 @@ func on_score_change(score: int): #This method is called by Game.gd whenever the
 #change_background function takes two parameters background color, and spike color.
 #however, we need to modulate more than 2 nodes, so here are the nodes we modulate
 #background color is assigned to: Score Label (the one in the center) and the background sprite
-#spike color is assigned to: GameName label on death screen
+#spike color is assigned to: default_clear_color (default_clear_color is changed because it can be seen on phones with bigger aspect ratios)
+#                            GameName label on death screen
 #                            BestScore label on death screen
 #                            GamesPlayed label on deathscreen
 #                            And the whole Spikes node
@@ -30,6 +31,7 @@ func on_score_change(score: int): #This method is called by Game.gd whenever the
 func change_background(bg: Color, spike: Color):
 	var tween = create_tween().set_parallel(true)
 	var tween_meth = create_tween().set_parallel(true)
+	tween_meth.tween_method(self, "change_default_color", ProjectSettings.get_setting("rendering/environment/default_clear_color"), spike, 0.25)
 	tween_meth.tween_method(self, "change_label_color", ScoreText.get("custom_colors/font_color"), bg, 0.25, [ScoreText])
 	tween_meth.tween_method(self, "change_label_color", $"../DeathScreen/GameName".get("custom_colors/font_color"), spike, 0.25, [$"../DeathScreen/GameName"])
 	tween_meth.tween_method(self, "change_label_color", $"../DeathScreen/VBoxContainer2/BestScore".get("custom_colors/font_color"), spike, 0.25, [$"../DeathScreen/VBoxContainer2/BestScore"])
@@ -39,6 +41,8 @@ func change_background(bg: Color, spike: Color):
 	tween.tween_property($"../SpikeSpawner", "modulate", spike, 0.25)
 	pass
 
+func change_default_color(color: Color):
+	VisualServer.set_default_clear_color(color)
 
 func change_label_color(color: Color, LabelNode: Label):
 	LabelNode.set("custom_colors/font_color", color)
