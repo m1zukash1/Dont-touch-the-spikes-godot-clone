@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Candy.png-5697bdb6dc5a5c8e043c5a56d1ebda64.stex"
+path="res://.import/BackButton.png-3ecb8f96b6ea8d74d0e343673cc084d5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Candy.png"
-dest_files=[ "res://.import/Candy.png-5697bdb6dc5a5c8e043c5a56d1ebda64.stex" ]
+source_file="res://Assets/MenuButtons/BackButton.png"
+dest_files=[ "res://.import/BackButton.png-3ecb8f96b6ea8d74d0e343673cc084d5.stex" ]
 
 [params]
 

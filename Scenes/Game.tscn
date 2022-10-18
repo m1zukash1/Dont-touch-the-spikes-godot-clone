@@ -1,24 +1,26 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=41 format=2]
 
-[ext_resource path="res://Assets/Bird.png" type="Texture" id=1]
-[ext_resource path="res://Assets/ScoreCircle.png" type="Texture" id=2]
-[ext_resource path="res://Assets/BackGround.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Spikes.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GameAssets/Bird.png" type="Texture" id=1]
+[ext_resource path="res://Assets/GameAssets/ScoreCircle.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GameAssets/BackGround.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GameAssets/Spikes.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Bird.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Bird_flapped.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GameAssets/Bird_flapped.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/SpikeSpawner.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Bird_dead.png" type="Texture" id=8]
+[ext_resource path="res://Assets/GameAssets/Bird_dead.png" type="Texture" id=8]
 [ext_resource path="res://Fonts/Blissful Thinking.otf" type="DynamicFontData" id=9]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=10]
 [ext_resource path="res://Fonts/GemunuLibre-SemiBold.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://Assets/Replay Box.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Score Box.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Candy.png" type="Texture" id=14]
+[ext_resource path="res://Assets/MenuButtons/Replay Box.png" type="Texture" id=12]
+[ext_resource path="res://Assets/MenuButtons/Score Box.png" type="Texture" id=13]
+[ext_resource path="res://Assets/GameAssets/Candy.png" type="Texture" id=14]
 [ext_resource path="res://Scripts/Sprites.gd" type="Script" id=15]
 [ext_resource path="res://Assets/MenuButtons/EmptyButton.png" type="Texture" id=16]
 [ext_resource path="res://Assets/MenuButtons/CandyButton.png" type="Texture" id=17]
 [ext_resource path="res://Assets/MenuButtons/HardModeButton.png" type="Texture" id=18]
-[ext_resource path="res://Scripts/ButtonContainer.gd" type="Script" id=19]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=19]
+[ext_resource path="res://Assets/MenuButtons/BackButton.png" type="Texture" id=20]
+[ext_resource path="res://Assets/MenuButtons/OrangeButton.png" type="Texture" id=21]
 
 [sub_resource type="DynamicFont" id=8]
 size = 352
@@ -73,6 +75,24 @@ font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 64
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 92
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 64
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 56
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=12]
@@ -255,6 +275,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 720.0
 margin_bottom = 1280.0
+script = ExtResource( 19 )
 
 [node name="GameName" type="Label" parent="Menu"]
 anchor_left = 0.5
@@ -345,96 +366,84 @@ text = "GAMES PLAYED: 1"
 align = 1
 valign = 1
 
-[node name="ButtonContainer" type="Control" parent="Menu"]
-margin_left = 21.6
-margin_top = 946.0
-margin_right = 175.6
-margin_bottom = 946.0
-script = ExtResource( 19 )
-
-[node name="LeftSideButtons" type="VBoxContainer" parent="Menu/ButtonContainer"]
+[node name="LeftSideButtons" type="VBoxContainer" parent="Menu"]
 anchor_left = 0.03
 anchor_top = 0.5
-anchor_right = 0.05
+anchor_right = 0.03
 anchor_bottom = 0.5
-margin_left = -4.62
-margin_top = -946.0
-margin_right = 96.3
-margin_bottom = 334.0
-focus_mode = 2
+margin_top = -304.0
+margin_right = 104.0
+margin_bottom = 304.0
 custom_constants/separation = 4
 alignment = 1
 
-[node name="HardModeButton" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
-margin_top = 336.0
+[node name="HardModeButton" type="Button" parent="Menu/LeftSideButtons"]
 margin_right = 104.0
-margin_bottom = 434.0
+margin_bottom = 98.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 18 )
 flat = true
 
-[node name="Button2" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
-margin_top = 438.0
+[node name="Button2" type="Button" parent="Menu/LeftSideButtons"]
+margin_top = 102.0
 margin_right = 104.0
-margin_bottom = 536.0
+margin_bottom = 200.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 16 )
 flat = true
 
-[node name="Button3" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
-margin_top = 540.0
+[node name="Button3" type="Button" parent="Menu/LeftSideButtons"]
+margin_top = 204.0
 margin_right = 104.0
-margin_bottom = 638.0
+margin_bottom = 302.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 16 )
 flat = true
 
-[node name="Button4" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
-margin_top = 642.0
+[node name="Button4" type="Button" parent="Menu/LeftSideButtons"]
+margin_top = 306.0
 margin_right = 104.0
-margin_bottom = 740.0
+margin_bottom = 404.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 16 )
 flat = true
 
-[node name="Button5" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
-margin_top = 744.0
+[node name="Button5" type="Button" parent="Menu/LeftSideButtons"]
+margin_top = 408.0
 margin_right = 104.0
-margin_bottom = 842.0
+margin_bottom = 506.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 16 )
 flat = true
 
-[node name="Button6" type="Button" parent="Menu/ButtonContainer/LeftSideButtons"]
-margin_top = 846.0
+[node name="Button6" type="Button" parent="Menu/LeftSideButtons"]
+margin_top = 510.0
 margin_right = 104.0
-margin_bottom = 944.0
+margin_bottom = 608.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 16 )
 flat = true
 
-[node name="RightSideButtons" type="VBoxContainer" parent="Menu/ButtonContainer"]
+[node name="RightSideButtons" type="VBoxContainer" parent="Menu"]
 anchor_left = 0.97
 anchor_top = 0.5
 anchor_right = 0.97
 anchor_bottom = 0.5
-margin_left = 423.42
-margin_top = -946.0
-margin_right = 527.42
-margin_bottom = 334.0
+margin_left = -104.0
+margin_top = -304.0
+margin_bottom = 304.0
 custom_constants/separation = 4
 alignment = 1
 
-[node name="Button" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
-margin_top = 336.0
+[node name="Button" type="Button" parent="Menu/RightSideButtons"]
 margin_right = 104.0
-margin_bottom = 434.0
+margin_bottom = 98.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 16 )
@@ -442,10 +451,10 @@ flat = true
 clip_text = true
 icon_align = 1
 
-[node name="Button2" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
-margin_top = 438.0
+[node name="Button2" type="Button" parent="Menu/RightSideButtons"]
+margin_top = 102.0
 margin_right = 104.0
-margin_bottom = 536.0
+margin_bottom = 200.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 16 )
@@ -453,10 +462,10 @@ flat = true
 clip_text = true
 icon_align = 1
 
-[node name="Button3" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
-margin_top = 540.0
+[node name="Button3" type="Button" parent="Menu/RightSideButtons"]
+margin_top = 204.0
 margin_right = 104.0
-margin_bottom = 638.0
+margin_bottom = 302.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 16 )
@@ -464,10 +473,10 @@ flat = true
 clip_text = true
 icon_align = 1
 
-[node name="Button4" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
-margin_top = 642.0
+[node name="CandyButton" type="Button" parent="Menu/RightSideButtons"]
+margin_top = 306.0
 margin_right = 104.0
-margin_bottom = 740.0
+margin_bottom = 404.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 17 )
@@ -475,10 +484,10 @@ flat = true
 clip_text = true
 icon_align = 1
 
-[node name="Button5" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
-margin_top = 744.0
+[node name="Button5" type="Button" parent="Menu/RightSideButtons"]
+margin_top = 408.0
 margin_right = 104.0
-margin_bottom = 842.0
+margin_bottom = 506.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 16 )
@@ -486,15 +495,119 @@ flat = true
 clip_text = true
 icon_align = 1
 
-[node name="Button6" type="Button" parent="Menu/ButtonContainer/RightSideButtons"]
-margin_top = 846.0
+[node name="Button6" type="Button" parent="Menu/RightSideButtons"]
+margin_top = 510.0
 margin_right = 104.0
-margin_bottom = 944.0
+margin_bottom = 608.0
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 16 )
 flat = true
 clip_text = true
+icon_align = 1
+
+[node name="CandyMenu" type="Control" parent="Menu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/CandyMenu"]
+anchor_left = 0.5
+anchor_top = 0.078
+anchor_right = 0.65
+anchor_bottom = 0.078
+margin_left = -253.5
+margin_right = 253.5
+margin_bottom = 97.0
+custom_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="Menu/CandyMenu/HBoxContainer"]
+margin_left = 54.0
+margin_right = 259.0
+margin_bottom = 97.0
+custom_colors/font_color = Color( 0.501961, 0.415686, 0.388235, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "SHOP"
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/CandyMenu/HBoxContainer"]
+margin_left = 284.0
+margin_right = 309.0
+margin_bottom = 97.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="Menu/CandyMenu/HBoxContainer"]
+margin_left = 334.0
+margin_right = 434.0
+margin_bottom = 97.0
+rect_min_size = Vector2( 100, 0 )
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 6
+
+[node name="CandyAmount" type="Label" parent="Menu/CandyMenu/HBoxContainer"]
+margin_left = 459.0
+margin_top = 14.0
+margin_right = 561.0
+margin_bottom = 82.0
+custom_colors/font_color = Color( 1, 0.509804, 0.027451, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "520"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CandyMenu"]
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 0.75
+margin_top = -187.0
+custom_constants/separation = 25
+alignment = 1
+
+[node name="DisableCandies" type="Button" parent="Menu/CandyMenu/VBoxContainer"]
+margin_right = 720.0
+margin_bottom = 81.0
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0.956863, 0.909804, 0.882353, 1 )
+custom_colors/font_color_focus = Color( 0.956863, 0.909804, 0.882353, 1 )
+custom_colors/font_color = Color( 0.956863, 0.909804, 0.882353, 1 )
+custom_colors/font_color_hover = Color( 0.956863, 0.909804, 0.882353, 1 )
+custom_colors/font_color_pressed = Color( 0.956863, 0.909804, 0.882353, 1 )
+custom_fonts/font = SubResource( 19 )
+enabled_focus_mode = 0
+text = "DISABLE CANDIES"
+icon = ExtResource( 21 )
+flat = true
+clip_text = true
+icon_align = 1
+
+[node name="DisableSound" type="Button" parent="Menu/CandyMenu/VBoxContainer"]
+margin_top = 106.0
+margin_right = 720.0
+margin_bottom = 187.0
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 0.956863, 0.909804, 0.882353, 1 )
+custom_colors/font_color_focus = Color( 0.956863, 0.909804, 0.882353, 1 )
+custom_colors/font_color = Color( 0.956863, 0.909804, 0.882353, 1 )
+custom_colors/font_color_hover = Color( 0.956863, 0.909804, 0.882353, 1 )
+custom_colors/font_color_pressed = Color( 0.956863, 0.909804, 0.882353, 1 )
+custom_fonts/font = SubResource( 19 )
+enabled_focus_mode = 0
+text = "DISABLE SOUND"
+icon = ExtResource( 21 )
+flat = true
+clip_text = true
+icon_align = 1
+
+[node name="BackButton" type="Button" parent="Menu"]
+visible = false
+anchor_left = 0.03
+anchor_top = 0.08
+anchor_right = 0.03
+anchor_bottom = 0.08
+margin_right = 104.0
+margin_bottom = 98.0
+focus_mode = 0
+icon = ExtResource( 20 )
+flat = true
 icon_align = 1
 
 [node name="DeathScreen" type="Control" parent="."]
@@ -632,8 +745,16 @@ anims/RESET = SubResource( 11 )
 [node name="FadeRect" type="ColorRect" parent="AnimationPlayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -624.0
+margin_bottom = 1010.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
 color = Color( 1, 1, 1, 0 )
 
+[connection signal="gui_input" from="Menu" to="Menu" method="_on_Menu_gui_input"]
+[connection signal="pressed" from="Menu/LeftSideButtons/HardModeButton" to="Menu" method="_on_HardModeButton_pressed"]
+[connection signal="pressed" from="Menu/RightSideButtons/CandyButton" to="Menu" method="_on_CandyButton_pressed"]
+[connection signal="pressed" from="Menu/CandyMenu/VBoxContainer/DisableCandies" to="Menu" method="_on_DisableCandies_pressed"]
+[connection signal="pressed" from="Menu/CandyMenu/VBoxContainer/DisableSound" to="Menu" method="_on_DisableSound_pressed"]
+[connection signal="pressed" from="Menu/BackButton" to="Menu" method="_on_BackButton_pressed"]
 [connection signal="pressed" from="DeathScreen/VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]

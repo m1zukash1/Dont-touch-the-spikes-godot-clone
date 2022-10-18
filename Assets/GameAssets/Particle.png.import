@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Replay Box.png-3186126c775817cac638c04398e4979a.stex"
+path="res://.import/Particle.png-7a5895f44d935194732aeb47d73efd51.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Replay Box.png"
-dest_files=[ "res://.import/Replay Box.png-3186126c775817cac638c04398e4979a.stex" ]
+source_file="res://Assets/GameAssets/Particle.png"
+dest_files=[ "res://.import/Particle.png-7a5895f44d935194732aeb47d73efd51.stex" ]
 
 [params]
 

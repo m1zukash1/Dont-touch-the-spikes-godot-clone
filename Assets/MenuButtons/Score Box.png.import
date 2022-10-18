@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Spike.png-fbe4c2310ea613584e9d2c7e3205b7b7.stex"
+path="res://.import/Score Box.png-d0fd53ea8e7c6d7b2500cc9e09295412.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Spike.png"
-dest_files=[ "res://.import/Spike.png-fbe4c2310ea613584e9d2c7e3205b7b7.stex" ]
+source_file="res://Assets/MenuButtons/Score Box.png"
+dest_files=[ "res://.import/Score Box.png-d0fd53ea8e7c6d7b2500cc9e09295412.stex" ]
 
 [params]
 

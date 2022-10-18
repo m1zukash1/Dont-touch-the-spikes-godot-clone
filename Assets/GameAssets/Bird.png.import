@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bird_flapped.png-39c65e60d1c483d63d7c06f78a702d4e.stex"
+path="res://.import/Bird.png-ee2bc4d46da9ad4704ea3505d57bd42b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bird_flapped.png"
-dest_files=[ "res://.import/Bird_flapped.png-39c65e60d1c483d63d7c06f78a702d4e.stex" ]
+source_file="res://Assets/GameAssets/Bird.png"
+dest_files=[ "res://.import/Bird.png-ee2bc4d46da9ad4704ea3505d57bd42b.stex" ]
 
 [params]
 

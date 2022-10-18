@@ -1,7 +1,7 @@
 extends Node
 
-var save_file = "user://DTTSCSF.savefile" #dont touch the spikes clone save file
-var Delete_Save_File = false
+var save_file = "user://DTTSCSF.savefile" # dont touch the spikes clone save file
+var Delete_Save_File = false # Used for debugging purposes
 	
 func delete_save():
 	var f = Directory.new()
@@ -15,6 +15,14 @@ func save():
 	f.store_var(GameData.games_played)
 	f.store_var(GameData.best_score)
 	f.store_var(GameData.candies)
+	
+	f.store_var(GameData.hard_games_played)
+	f.store_var(GameData.hard_best_score)
+	
+	f.store_var(GameData.candies_disabled)
+	f.store_var(GameData.sound_disabled)
+
+
 
 	f.close()
 
@@ -26,6 +34,12 @@ func load_save():
 		GameData.games_played = f.get_var()
 		GameData.best_score = f.get_var()
 		GameData.candies = f.get_var()
+		
+		GameData.hard_games_played = f.get_var()
+		GameData.hard_best_score = f.get_var()
+		
+		GameData.candies_disabled = f.get_var()
+		GameData.sound_disabled = f.get_var()
 		
 		f.close()
 		

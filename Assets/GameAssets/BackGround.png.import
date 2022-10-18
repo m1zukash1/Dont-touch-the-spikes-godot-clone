@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bird.png-003c5583b3d7db2160c15c2729203a68.stex"
+path="res://.import/BackGround.png-27a13b8d06f4632920f28f4a8ef6f55a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bird.png"
-dest_files=[ "res://.import/Bird.png-003c5583b3d7db2160c15c2729203a68.stex" ]
+source_file="res://Assets/GameAssets/BackGround.png"
+dest_files=[ "res://.import/BackGround.png-27a13b8d06f4632920f28f4a8ef6f55a.stex" ]
 
 [params]
 

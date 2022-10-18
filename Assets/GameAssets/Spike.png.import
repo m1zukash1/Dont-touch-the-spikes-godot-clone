@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bird_dead.png-a849a101fab82040e68270385b52d126.stex"
+path="res://.import/Spike.png-5411fef34f49af39b171e3e826107e1e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bird_dead.png"
-dest_files=[ "res://.import/Bird_dead.png-a849a101fab82040e68270385b52d126.stex" ]
+source_file="res://Assets/GameAssets/Spike.png"
+dest_files=[ "res://.import/Spike.png-5411fef34f49af39b171e3e826107e1e.stex" ]
 
 [params]
 

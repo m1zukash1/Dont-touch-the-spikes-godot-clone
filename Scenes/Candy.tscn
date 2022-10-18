@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Candy.png" type="Texture" id=1]
+[ext_resource path="res://Assets/GameAssets/Candy.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Candy.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/Blissful Thinking.otf" type="DynamicFontData" id=3]
 

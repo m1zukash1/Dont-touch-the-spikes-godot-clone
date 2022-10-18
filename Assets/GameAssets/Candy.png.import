@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Score Box.png-910c12fbeec8b469edf04c5155b9b21b.stex"
+path="res://.import/Candy.png-ccd897e0c785c15dad2520453f5da5b5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Score Box.png"
-dest_files=[ "res://.import/Score Box.png-910c12fbeec8b469edf04c5155b9b21b.stex" ]
+source_file="res://Assets/GameAssets/Candy.png"
+dest_files=[ "res://.import/Candy.png-ccd897e0c785c15dad2520453f5da5b5.stex" ]
 
 [params]
 
