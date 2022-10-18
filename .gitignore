@@ -11,7 +11,7 @@ export_presets.cfg
 data_*/
 
 #Game builds
-.Builds/
+Builds/*
 
 # Android exports
 *.apk

@@ -16,6 +16,8 @@ func _ready() -> void:
 	
 	if GameData.sound_disabled: $CandyMenu/VBoxContainer/DisableSound.set_text("ENABLE SOUND")
 	else: $CandyMenu/VBoxContainer/DisableSound.set_text("DISABLE SOUND")
+	
+	$CandyMenu/HBoxContainer/CandyAmount.set_text(str(GameData.candies))
 
 func _on_HardModeButton_pressed() -> void:
 	Audio.get_node("Click").play()
