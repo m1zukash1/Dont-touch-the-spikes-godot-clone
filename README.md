@@ -1,7 +1,7 @@
 # Dont touch the spikes remade in the Godot engine
  
 ## Aim of this project
-This is a simple project I made in a few days which I hope will help people to learn the Godot game engine.
+This is a simple project I made in a few days using Godot. I had no particular aim in making this project however I hope that this will help someone understand Godot better.
 
 ## Contributing
 Contributing or fixing my mistakes is absolutely welcomed, this project is not a full replica of the original game, it lacks many features and probably contains lots of bugs.
