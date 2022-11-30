@@ -32,7 +32,6 @@ func on_score_change(score: int): #This method is called by Game.gd whenever the
 func change_background(bg: Color, spike: Color, time: float = 0.25):
 	var tween = create_tween().set_parallel(true)
 	var tween_meth = create_tween().set_parallel(true)
-	tween_meth.tween_method(self, "change_default_color", ProjectSettings.get_setting("rendering/environment/default_clear_color"), spike, time)
 	tween_meth.tween_method(self, "change_label_color", ScoreText.get("custom_colors/font_color"), bg, time, [ScoreText])
 	tween_meth.tween_method(self, "change_label_color", $"../Menu/GameName".get("custom_colors/font_color"), spike, time, [$"../Menu/GameName"])
 	tween_meth.tween_method(self, "change_label_color", $"../Menu/VBoxContainer/BestScore".get("custom_colors/font_color"), spike, time, [$"../Menu/VBoxContainer/BestScore"])

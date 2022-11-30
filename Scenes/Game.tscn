@@ -226,6 +226,7 @@ texture = ExtResource( 2 )
 
 [node name="Spikes" type="Sprite" parent="Sprites"]
 modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+position = Vector2( 0, -640 )
 texture = ExtResource( 4 )
 centered = false
 

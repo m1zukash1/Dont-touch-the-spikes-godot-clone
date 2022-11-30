@@ -31,11 +31,6 @@ func _ready() -> void:
 	
 	$AnimationPlayer.play("BirdIdleMenuAnimation")
 	
-#func _input(event: InputEvent) -> void:
-#	if event is InputEventScreenTouch:
-#		if event.is_pressed():
-#			if !is_game_started and can_start_game:
-#				start_game()
 
 func on_bird_hit_wall() -> void:
 	if $Bird.is_dead:
