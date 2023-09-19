@@ -1,6 +1,6 @@
 extends Control
 
-onready var GameManager : Node2D = get_parent()
+@onready var GameManager : Node2D = get_parent()
 var can_start_game : bool = true
 
 func _on_Menu_gui_input(event: InputEvent) -> void: # Starting game from here thereby it wouldn't start game on menu button presses

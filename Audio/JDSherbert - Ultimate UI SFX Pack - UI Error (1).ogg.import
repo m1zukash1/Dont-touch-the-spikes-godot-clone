@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/JDSherbert - Ultimate UI SFX Pack - UI Error (1).ogg-932146f40798aba9524c8b0d94204eed.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b84yhnc8hrnqs"
+path="res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - UI Error (1).ogg-932146f40798aba9524c8b0d94204eed.oggvorbisstr"
 
 [deps]
 
 source_file="res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Error (1).ogg"
-dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - UI Error (1).ogg-932146f40798aba9524c8b0d94204eed.oggstr" ]
+dest_files=["res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - UI Error (1).ogg-932146f40798aba9524c8b0d94204eed.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -5,11 +5,11 @@ var offset : float = -50.0
 var enabled : bool = false
 
 func _ready() -> void:
-	self.connect("body_entered", self, "_on_spike_body_entered")
-	var child_rotation : float = deg2rad(-90)
+	self.connect("body_entered", Callable(self, "_on_spike_body_entered"))
+	var child_rotation : float = deg_to_rad(-90)
 	if (left):
 		offset = 50.0
-		child_rotation = deg2rad(90)
+		child_rotation = deg_to_rad(90)
 	$SpikeSprite.rotation = child_rotation
 	$CollisionPolygon2D.rotation = child_rotation
 

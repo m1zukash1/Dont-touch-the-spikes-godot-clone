@@ -8,11 +8,11 @@ var last_candy_left : bool = false
 func _ready() -> void:
 	
 	#Connecting signals
-	$Bird.connect("died", self, "_on_bird_death")
-	$Bird.connect("hit_wall", self, "on_bird_hit_wall")
+	$Bird.connect("died", Callable(self, "_on_bird_death"))
+	$Bird.connect("hit_wall", Callable(self, "on_bird_hit_wall"))
 	
 	#Resetting default clear color
-	VisualServer.set_default_clear_color(Color("808080"))
+	RenderingServer.set_default_clear_color(Color("808080"))
 	
 	#Initializing statistics
 	$Menu/VBoxContainer/Candies/Label.set_text(str(GameData.candies))
@@ -57,7 +57,7 @@ func _on_bird_death() -> void:
 	
 	SaveSystem.save() #Saving everything on death
 	
-	yield(get_tree().create_timer(0.5),"timeout") #Waiting for half a sec to show the death screen for better feel
+	await get_tree().create_timer(0.5).timeout #Waiting for half a sec to show the death screen for better feel
 	show_death_screen()
 
 func show_death_screen() -> void:
@@ -95,7 +95,7 @@ func start_game() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property($Menu, "modulate:a", 0.0, 0.25)
 	tween.play()
-	yield(tween,"finished")
+	await tween.finished
 	
 	match GameData.current_mode:
 		GameData.MODE.normal:
@@ -112,16 +112,16 @@ func start_game() -> void:
 func _on_RestartButton_pressed() -> void:
 	Audio.get_node("Click").play()
 	$AnimationPlayer.play("FadeIn") #Fading in the screen with withe color for smother feel
-	yield($AnimationPlayer,"animation_finished") #When the fade in is finished, only then the scene is restarted (It takes less than 1ms to restart the scene on most devices, so its not a problem)
+	await $AnimationPlayer.animation_finished #When the fade in is finished, only then the scene is restarted (It takes less than 1ms to restart the scene on most devices, so its not a problem)
 	get_tree().reload_current_scene()
 
-onready var candy = preload("res://Scenes/Candy.tscn")
+@onready var candy = preload("res://Scenes/Candy.tscn")
 func spawn_candy():
 	if GameData.candies_disabled:
 		return
-	var c = candy.instance()
-	c.position.y = rand_range(180,1000) #Whenever candy is spawned its y position is randomized
-	c.connect("collected", self, "on_candy_collected")
+	var c = candy.instantiate()
+	c.position.y = randf_range(180,1000) #Whenever candy is spawned its y position is randomized
+	c.connect("collected", Callable(self, "on_candy_collected"))
 	
 	if (last_candy_left):
 		c.position.x = 96

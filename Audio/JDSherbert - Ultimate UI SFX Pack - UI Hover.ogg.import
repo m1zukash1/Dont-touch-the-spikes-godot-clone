@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/JDSherbert - Ultimate UI SFX Pack - UI Hover.ogg-e7fa20570ec992ff7ef10fe2f1239c64.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://rhyqwtwobfy7"
+path="res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - UI Hover.ogg-e7fa20570ec992ff7ef10fe2f1239c64.oggvorbisstr"
 
 [deps]
 
 source_file="res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Hover.ogg"
-dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - UI Hover.ogg-e7fa20570ec992ff7ef10fe2f1239c64.oggstr" ]
+dest_files=["res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - UI Hover.ogg-e7fa20570ec992ff7ef10fe2f1239c64.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

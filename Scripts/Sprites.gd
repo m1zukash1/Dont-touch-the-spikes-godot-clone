@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var GameManager = get_parent()
-onready var ScoreText: Label = $"../Label"
+@onready var GameManager = get_parent()
+@onready var ScoreText: Label = $"../Label"
 
 func on_score_change(score: int): #This method is called by Game.gd whenever the score changes
 	if GameData.current_mode == GameData.MODE.normal:
@@ -32,21 +32,21 @@ func on_score_change(score: int): #This method is called by Game.gd whenever the
 func change_background(bg: Color, spike: Color, time: float = 0.25):
 	var tween = create_tween().set_parallel(true)
 	var tween_meth = create_tween().set_parallel(true)
-	tween_meth.tween_method(self, "change_label_color", ScoreText.get("custom_colors/font_color"), bg, time, [ScoreText])
-	tween_meth.tween_method(self, "change_label_color", $"../Menu/GameName".get("custom_colors/font_color"), spike, time, [$"../Menu/GameName"])
-	tween_meth.tween_method(self, "change_label_color", $"../Menu/VBoxContainer/BestScore".get("custom_colors/font_color"), spike, time, [$"../Menu/VBoxContainer/BestScore"])
-	tween_meth.tween_method(self, "change_label_color", $"../Menu/VBoxContainer/GamesPlayed".get("custom_colors/font_color"), spike, time, [$"../Menu/VBoxContainer/GamesPlayed"])
-	tween_meth.tween_method(self, "change_label_color", $"../DeathScreen/GameName".get("custom_colors/font_color"), spike, time, [$"../DeathScreen/GameName"])
-	tween_meth.tween_method(self, "change_label_color", $"../DeathScreen/VBoxContainer2/BestScore".get("custom_colors/font_color"), spike, time, [$"../DeathScreen/VBoxContainer2/BestScore"])
-	tween_meth.tween_method(self, "change_label_color", $"../DeathScreen/VBoxContainer2/GamesPlayed".get("custom_colors/font_color"), spike, time, [$"../DeathScreen/VBoxContainer2/GamesPlayed"])	
+	tween_meth.tween_method(Callable(self, "change_label_color").bind(ScoreText), ScoreText.get("theme_override_colors/font_color"), bg, time)
+	tween_meth.tween_method(Callable(self, "change_label_color").bind($"../Menu/GameName"), $"../Menu/GameName".get("theme_override_colors/font_color"), spike, time)
+	tween_meth.tween_method(Callable(self, "change_label_color").bind($"../Menu/VBoxContainer/BestScore"), $"../Menu/VBoxContainer/BestScore".get("theme_override_colors/font_color"), spike, time)
+	tween_meth.tween_method(Callable(self, "change_label_color").bind($"../Menu/VBoxContainer/GamesPlayed"), $"../Menu/VBoxContainer/GamesPlayed".get("theme_override_colors/font_color"), spike, time)
+	tween_meth.tween_method(Callable(self, "change_label_color").bind($"../DeathScreen/GameName"), $"../DeathScreen/GameName".get("theme_override_colors/font_color"), spike, time)
+	tween_meth.tween_method(Callable(self, "change_label_color").bind($"../DeathScreen/VBoxContainer2/BestScore"), $"../DeathScreen/VBoxContainer2/BestScore".get("theme_override_colors/font_color"), spike, time)
+	tween_meth.tween_method(Callable(self, "change_label_color").bind($"../DeathScreen/VBoxContainer2/GamesPlayed"), $"../DeathScreen/VBoxContainer2/GamesPlayed".get("theme_override_colors/font_color"), spike, time)	
 	tween.tween_property($BackGround, "modulate", bg, time)
 	tween.tween_property($Spikes, "modulate", spike, time)
 	tween.tween_property($"../SpikeSpawner", "modulate", spike, time)
 	pass
 
 func change_default_color(color: Color):
-	VisualServer.set_default_clear_color(color)
+	RenderingServer.set_default_clear_color(color)
 
 func change_label_color(color: Color, LabelNode: Label):
-	LabelNode.set("custom_colors/font_color", color)
+	LabelNode.set("theme_override_colors/font_color", color)
 	pass

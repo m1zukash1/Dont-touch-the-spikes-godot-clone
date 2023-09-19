@@ -5,7 +5,7 @@ var loaded_left : bool = false
 var rng = RandomNumberGenerator.new()
 var diff_range = [2,3] #Defines min and max amount of spikes that can appear on the screen (it is picked randomly based on that range whenever the new spikes need to be spawned)
 
-onready var Spike = preload("res://Scenes/Spike.tscn")
+@onready var Spike = preload("res://Scenes/Spike.tscn")
 
 var LeftSpikes : Array = []
 var RightSpikes : Array = []
@@ -13,14 +13,14 @@ var RightSpikes : Array = []
 func _ready() -> void:
 	randomize()
 	init_spikes() #spawning all the spikes to the game node (cba to do it by hand in the editor)
-	$"%Bird".connect("hit_wall", self, "_on_bird_hit_wall")
+	$"%Bird".connect("hit_wall", Callable(self, "_on_bird_hit_wall"))
 
 func init_spikes():
 	
 	var last_spike_y_pos : int = 96
 	
 	for _i in 11:
-		var spike = Spike.instance()
+		var spike = Spike.instantiate()
 		spike.left = true
 		spike.position.x = -28
 		spike.position.y = last_spike_y_pos + 88
@@ -31,7 +31,7 @@ func init_spikes():
 	last_spike_y_pos = 96
 	
 	for _i in 11:
-		var spike = Spike.instance()
+		var spike = Spike.instantiate()
 		spike.left = false
 		spike.position.x = 746
 		spike.position.y = last_spike_y_pos + 88

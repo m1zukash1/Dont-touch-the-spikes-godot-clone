@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/JDSherbert - Ultimate UI SFX Pack - UI Confirm (1).ogg-7ef775f4a82af59ddae12581c2a6edc6.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://13740h7diw04"
+path="res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - UI Confirm (1).ogg-7ef775f4a82af59ddae12581c2a6edc6.oggvorbisstr"
 
 [deps]
 
 source_file="res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Confirm (1).ogg"
-dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - UI Confirm (1).ogg-7ef775f4a82af59ddae12581c2a6edc6.oggstr" ]
+dest_files=["res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - UI Confirm (1).ogg-7ef775f4a82af59ddae12581c2a6edc6.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

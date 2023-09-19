@@ -1,15 +1,15 @@
-extends KinematicBody2D
+extends CharacterBody2D
 class_name Bird
 
 var speed : float = 400
 var jump_speed : float = 700
 var gravity : float = 2000
 
-onready var Particle = preload("res://Scenes/Particle.tscn")
+@onready var Particle = preload("res://Scenes/Particle.tscn")
 
 var is_dead :bool = false
 
-var velocity: Vector2 = Vector2.ZERO
+#var velocity: Vector2 = Vector2.ZERO
 
 var particle_cooldown : float 
 var particle_cooldown_expired : bool = true
@@ -46,12 +46,14 @@ func _process(delta: float) -> void:
 		emit_signal("hit_wall")
 		speed = -speed
 		velocity.x = speed
-		$Sprite.flip_h = !$Sprite.flip_h #flips the sprite to opposite direction
+		$Sprite2D.flip_h = !$Sprite2D.flip_h #flips the sprite to opposite direction
 		
 	if is_dead: #Improvised death animation
 		rotation_degrees += 1000 * delta
 		
-	move_and_slide(velocity, Vector2.UP)
+	set_velocity(velocity)
+	set_up_direction(Vector2.UP)
+	move_and_slide()
 	
 	
 func jump() -> void:
@@ -59,17 +61,17 @@ func jump() -> void:
 	velocity.y = -jump_speed #Performing the jump
 	
 	if !is_dead: 
-		$Sprite.play("default") #Godot does some weird stuff, if the sprite anim isn't defaulted before playing jump anim
-		$Sprite.play("jump")
+		$Sprite2D.play("default") #Godot does some weird stuff, if the sprite anim isn't defaulted before playing jump anim
+		$Sprite2D.play("jump")
 		Audio.get_node("Jump").play()
 		
 	if particle_cooldown_expired and can_spawn_particles:
-		var p = Particle.instance()
+		var p = Particle.instantiate()
 		add_child(p)
 		move_child(p,0) #Moving the particle node to the front of the screen, so it would not appear behind the background or bird
 		particle_cooldown_expired = false
 		particle_cooldown = p.lifetime
-		yield(get_tree().create_timer(particle_cooldown),"timeout") #Introducing a cooldown before being able to spawn new particles so the screen wouldn't get flooded with new particles if the player spams the screen with jumps
+		await get_tree().create_timer(particle_cooldown).timeout #Introducing a cooldown before being able to spawn new particles so the screen wouldn't get flooded with new particles if the player spams the screen with jumps
 		particle_cooldown_expired = true
 
 func die() -> void:
@@ -82,7 +84,7 @@ func die() -> void:
 	can_spawn_particles = false
 	speed *= 3 #Improvised death anim
 	velocity.x = speed
-	$Sprite.play("death")
+	$Sprite2D.play("death")
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", .0, 0.75) #Fading out the bird sprite
 	tween.play()

@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/JDSherbert - Ultimate UI SFX Pack - UI Popup (Close - 2).ogg-a9f62446c0a112368f7bed345c6f5b93.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chkislmmgxfgq"
+path="res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - UI Popup (Close - 2).ogg-a9f62446c0a112368f7bed345c6f5b93.oggvorbisstr"
 
 [deps]
 
 source_file="res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Popup (Close - 2).ogg"
-dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - UI Popup (Close - 2).ogg-a9f62446c0a112368f7bed345c6f5b93.oggstr" ]
+dest_files=["res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - UI Popup (Close - 2).ogg-a9f62446c0a112368f7bed345c6f5b93.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

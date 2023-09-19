@@ -1,0 +1,3 @@
+res://Scenes/Game.tscn
+res://Scenes/Candy.tscn
+res://Singletons/SaveSystem.gd

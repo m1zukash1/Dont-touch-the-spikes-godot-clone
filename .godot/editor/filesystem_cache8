@@ -1,0 +1,63 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1695142141
+icon.png::CompressedTexture2D::1075297871316370164::1695140819::1695141018::1::::<><>::
+README.md::TextFile::-1::1695140819::0::1::::<><>::
+splash_screen.png::CompressedTexture2D::3380454934601725194::1695140819::1695141018::1::::<><>::
+::res://Assets/::1695140819
+::res://Assets/GameAssets/::1695141018
+BackGround.png::CompressedTexture2D::6528894273664222835::1695140819::1695141018::1::::<><>::
+Bird.png::CompressedTexture2D::5278506283026810573::1695140819::1695141018::1::::<><>::
+Bird_dead.png::CompressedTexture2D::3044133884236202085::1695140819::1695141018::1::::<><>::
+Bird_flapped.png::CompressedTexture2D::4104834901323307154::1695140819::1695141018::1::::<><>::
+Candy.png::CompressedTexture2D::6991734188677140476::1695140819::1695141018::1::::<><>::
+Particle.png::CompressedTexture2D::2434266508636223073::1695140819::1695141018::1::::<><>::
+ScoreCircle.png::CompressedTexture2D::33240144242910734::1695140819::1695141018::1::::<><>::
+Spike.png::CompressedTexture2D::8266918563219888044::1695140819::1695141018::1::::<><>::
+Spikes.png::CompressedTexture2D::2711702146027061036::1695140819::1695141018::1::::<><>::
+::res://Assets/MenuButtons/::1695141018
+BackButton.png::CompressedTexture2D::1161262409275920935::1695140819::1695141018::1::::<><>::
+CandyButton.png::CompressedTexture2D::290374681458907293::1695140819::1695141018::1::::<><>::
+EmptyButton.png::CompressedTexture2D::6945909172567890983::1695140819::1695141018::1::::<><>::
+HardModeButton.png::CompressedTexture2D::2475152624264674701::1695140819::1695141018::1::::<><>::
+OrangeButton.png::CompressedTexture2D::9042801544188577112::1695140819::1695141018::1::::<><>::
+Replay Box.png::CompressedTexture2D::1263969199964450942::1695140819::1695141018::1::::<><>::
+Score Box.png::CompressedTexture2D::6398930279720221191::1695140819::1695141018::1::::<><>::
+::res://Audio/::1695141018
+JDSherbert - Ultimate UI SFX Pack - UI Cancel.ogg::AudioStreamOggVorbis::1071976888494253900::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Click.ogg::AudioStreamOggVorbis::744785746772116276::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Confirm (1).ogg::AudioStreamOggVorbis::1884708568849952375::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Confirm (2).ogg::AudioStreamOggVorbis::1272355579122323048::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Error (1).ogg::AudioStreamOggVorbis::4763989874402200446::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Error (2).ogg::AudioStreamOggVorbis::262331505373108427::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Hover.ogg::AudioStreamOggVorbis::1209147952537163468::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Popup (Close - 1).ogg::AudioStreamOggVorbis::5552542922495007977::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Popup (Close - 2).ogg::AudioStreamOggVorbis::5285325527474104072::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Popup (Close - 3).ogg::AudioStreamOggVorbis::76204874622946042::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Popup (Open - 1).ogg::AudioStreamOggVorbis::7352923629072836065::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Popup (Open - 2).ogg::AudioStreamOggVorbis::1629661888628034825::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Popup (Open - 3).ogg::AudioStreamOggVorbis::295103026748090046::1695140819::1695141018::1::::<><>::
+JDSherbert - Ultimate UI SFX Pack - UI Select.ogg::AudioStreamOggVorbis::9105933499370160303::1695140819::1695141018::1::::<><>::
+LICENSE.txt::TextFile::-1::1695140819::0::1::::<><>::
+::res://Fonts/::1695141018
+Blissful Thinking.otf::FontFile::4009188083562315245::1695140819::1695141018::1::::<><>::
+GemunuLibre-SemiBold.ttf::FontFile::2992926761298699761::1695140819::1695141018::1::::<><>::
+Play-Bold.ttf::FontFile::3480631673173472105::1695140819::1695141018::1::::<><>::
+::res://Scenes/::1695142135
+Candy.tscn::PackedScene::767879567836581122::1695142130::0::1::::<><>::uid://c6u33tyiqc8se::::res://Assets/GameAssets/Candy.png<>res://Scripts/Candy.gd<>uid://bxec0h0bmbcnd::::res://Fonts/Blissful Thinking.otf
+Game.tscn::PackedScene::2982288570778759710::1695142135::0::1::::<><>::uid://chg7hy0dfq2dl::::res://Assets/GameAssets/Bird.png<>uid://qdpwenfu3ao::::res://Assets/GameAssets/ScoreCircle.png<>uid://c0av61vsbwyvj::::res://Assets/GameAssets/BackGround.png<>uid://bevtlq6b7if1e::::res://Assets/GameAssets/Spikes.png<>res://Scripts/Bird.gd<>uid://byqobb7njbqik::::res://Assets/GameAssets/Bird_flapped.png<>res://Scripts/SpikeSpawner.gd<>uid://bjmuo8ali17m4::::res://Assets/GameAssets/Bird_dead.png<>uid://bxec0h0bmbcnd::::res://Fonts/Blissful Thinking.otf<>res://Scripts/Game.gd<>uid://biv2ci4gldr4l::::res://Fonts/GemunuLibre-SemiBold.ttf<>uid://sajngueexwqo::::res://Assets/MenuButtons/Replay Box.png<>uid://cxfxpgrqnq0l4::::res://Assets/MenuButtons/Score Box.png<>uid://c6u33tyiqc8se::::res://Assets/GameAssets/Candy.png<>res://Scripts/Sprites.gd<>uid://c57wdyko7xo8v::::res://Assets/MenuButtons/EmptyButton.png<>uid://eewoto5a1hsn::::res://Assets/MenuButtons/CandyButton.png<>uid://bbi8nw3bd87yf::::res://Assets/MenuButtons/HardModeButton.png<>res://Scripts/Menu.gd<>uid://qsr27qp2erfj::::res://Assets/MenuButtons/BackButton.png<>uid://d13nvda2x61iy::::res://Assets/MenuButtons/OrangeButton.png
+Particle.tscn::PackedScene::-1::1695141012::0::1::::<><>::res://Assets/GameAssets/Particle.png<>res://Scripts/Particle.gd
+Spike.tscn::PackedScene::-1::1695141012::0::1::::<><>::res://Scripts/Spike.gd<>res://Assets/GameAssets/Spike.png
+::res://Scripts/::1695142110
+Bird.gd::GDScript::-1::1695141045::0::1::::Bird<>CharacterBody2D<>::
+ButtonContainer.gd::GDScript::-1::1695141012::0::1::::<>Control<>::
+Candy.gd::GDScript::-1::1695141012::0::1::::<>Area2D<>::
+Game.gd::GDScript::-1::1695142110::0::1::::<>Node2D<>::
+Menu.gd::GDScript::-1::1695141012::0::1::::<>Control<>::
+Particle.gd::GDScript::-1::1695141012::0::1::::<>CPUParticles2D<>::
+Spike.gd::GDScript::-1::1695141012::0::1::::<>Area2D<>::
+SpikeSpawner.gd::GDScript::-1::1695141012::0::1::::<>Node2D<>::
+Sprites.gd::GDScript::-1::1695141012::0::1::::<>Node2D<>::
+::res://Singletons/::1695142099
+Audio.tscn::PackedScene::-1::1695141012::0::1::::<><>::res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Popup (Open - 3).ogg<>res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Popup (Open - 2).ogg<>res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Error (2).ogg<>res://Audio/JDSherbert - Ultimate UI SFX Pack - UI Cancel.ogg
+GameData.gd::GDScript::-1::1695141012::0::1::::<>Node<>::
+SaveSystem.gd::GDScript::-1::1695142099::0::1::::<>Node<>::
