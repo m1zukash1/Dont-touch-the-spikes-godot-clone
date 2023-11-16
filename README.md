@@ -1,11 +1,11 @@
 # Dont touch the spikes recreated in the Godot engine
 
 <div align="left">
-  <img src="Screenshots/Screenshot-Menu.png" alt="Game Screenshot" width="190" style="display: inline-block; margin: 10px;"/>
-  <img src="Screenshots/Screenshot-InGame-1.png" alt="In-Game 1 Screenshot" width="190" style="display: inline-block; margin: 10px;"/>
-  <img src="Screenshots/Screenshot-InGame-2.png" alt="In-Game 1 Screenshot" width="190" style="display: inline-block; margin: 10px;"/>
-  <img src="Screenshots/Screenshot-InGame-3.png" alt="In-Game 3 Screenshot" width="190" style="display: inline-block; margin: 10px;"/>
-  <img src="Screenshots/Screenshot-DeathScreen.png" alt="Death Screen Screenshot" width="190" style="display: inline-block; margin: 10px;"/>
+  <img src="Screenshots/Screenshot-Menu.png" alt="Game Screenshot" width="180" style="display: inline-block; margin: 10px;"/>
+  <img src="Screenshots/Screenshot-InGame-1.png" alt="In-Game 1 Screenshot" width="180" style="display: inline-block; margin: 10px;"/>
+  <img src="Screenshots/Screenshot-InGame-2.png" alt="In-Game 1 Screenshot" width="180" style="display: inline-block; margin: 10px;"/>
+  <img src="Screenshots/Screenshot-InGame-3.png" alt="In-Game 3 Screenshot" width="180" style="display: inline-block; margin: 10px;"/>
+  <img src="Screenshots/Screenshot-DeathScreen.png" alt="Death Screen Screenshot" width="180" style="display: inline-block; margin: 10px;"/>
 </div>
 
 This project can serve as a learning material for those seeking to understand Godot better. The code is thoughtfully structured, featuring detailed comments and a well-organized overall project layout, ideal for mobile game development using Godot.
